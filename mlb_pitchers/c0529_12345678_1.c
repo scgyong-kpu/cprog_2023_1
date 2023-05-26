@@ -10,6 +10,18 @@
 // HR = Homeruns, BB = Base on balls (walk), SO = Strikeouts
 // AVG = Hit Average, WHIP = (Walks+Hits)/IP
 
+// 위 정보를 바탕으로 struct pitcher 를 선언한다
+struct pitcher {
+    char lastName[20], firstName[4];
+    char team[8];
+    int win, lose;
+    float era;
+    int games, gamesStarted, saves, saveOppertunities;
+    float inningsPitched;
+    int hits, runs, earnedRuns, homeRuns, basesOnBalls, strikeOuts;
+    float battingAverage, whip;
+};
+
 int int main(int argc, char const *argv[])
 {
     return 0;
