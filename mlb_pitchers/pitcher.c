@@ -1,4 +1,21 @@
+#include <stdio.h>
 #include "pitcher.h"
+
+void Pitcher_print(const Pitcher* p)
+{
+  char name[24];
+  sprintf(name, "%s %s", p->lastName, p->firstName);
+  printf(
+    "%-13s %-3s %2d %2d %5.2f "
+    "%2d %2d %2d %3d %5.1f "
+    "%2d %2d %2d %2d %2d %2d "
+    "%5.3f %4.2f\n",
+    name, p->team, p->win, p->lose, p->era,
+    p->games, p->gamesStarted, p->saves, p->saveOppertunities, p->inningsPitched,
+    p->hits, p->runs, p->earnedRuns, p->homeRuns, p->basesOnBalls, p->strikeOuts,
+    p->battingAverage, p->whip
+  );
+}
 
 Pitcher pitchers[] = {
     { "Ryu", "H", "LAD", 6, 1, 1.52, 9, 9, 0, 0, 59.1, 40, 10, 10, 6, 4, 59, 0.190, 0.74 },
