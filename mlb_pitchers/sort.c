@@ -11,7 +11,9 @@ int num_cmp(const void *a, const void *b)
 {
   int v1 = *(int *)a;
   int v2 = *(int *)b;
-  return -(v1 - v2);
+  int d10_1 = v1 / 10 % 10;
+  int d10_2 = v2 / 10 % 10;
+  return d10_1 - d10_2;
 }
 
 void printValues(void)
