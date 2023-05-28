@@ -1,6 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "pitcher.h"
+
+int Pitcher_cmp_lastName(const void *a, const void *b)
+{
+    const Pitcher *p1 = (const Pitcher *)a;
+    const Pitcher *p2 = (const Pitcher *)b;
+
+    int ret = strcmp(p1->lastName, p2->lastName);
+    if (ret < 0) {
+        return -1;
+    } else if (ret > 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
 int Pitcher_cmp_era(const void *a, const void *b)
 {
@@ -42,7 +58,7 @@ int main(int argc, char const *argv[])
     qsort(pitchers,
         pitcher_count,
         sizeof(pitchers[0]),
-        Pitcher_cmp_win_lose);
+        Pitcher_cmp_lastName);
     printf("----------\n");
     Pitcher_printAll(10);
     return 0;
