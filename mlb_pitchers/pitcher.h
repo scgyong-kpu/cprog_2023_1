@@ -23,4 +23,5 @@ extern Pitcher pitchers[];
 extern const int pitcher_count;
 
 void Pitcher_print(const Pitcher* p);
+void Pitcher_printAll(int count); // count=0: all
 

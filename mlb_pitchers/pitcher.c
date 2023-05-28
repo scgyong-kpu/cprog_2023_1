@@ -17,6 +17,30 @@ void Pitcher_print(const Pitcher* p)
   );
 }
 
+void Pitcher_printAll(int count)
+{
+  if (count == 0) {
+    count = pitcher_count;
+  }
+  printf(
+    "%-13s %-3s %2s %2s %5s "
+    "%2s %2s %2s %3s %5s "
+    "%2s %2s %2s %2s %2s %2s "
+    "%5s %4s\n",
+    "Name", "Tm", "W", "L", "ERA",
+    "G", "GS", "SV", "SVO", "IP ",
+    "H", "R", "ER", "HR", "BB", "SO",
+    "AVG ", "WHIP");
+  // Tm = Team, W = Wins, L = Loses, ERA = Earned Runs Average
+  // G = Games, GS = Games Started, SV = Saves, SVO = Save Opportunity
+  // IP = Innings Pitched, H = Hits, R = Runs, ER = Earned Runs
+  // HR = Homeruns, BB = Base on balls (walk), SO = Strikeouts
+  // AVG = Hit Average, WHIP = (Walks+Hits)/IP
+  for (int i = 0; i < count; i++) {
+    Pitcher_print(&pitchers[i]);
+  }
+}
+
 Pitcher pitchers[] = {
     { "Ryu", "H", "LAD", 6, 1, 1.52, 9, 9, 0, 0, 59.1, 40, 10, 10, 6, 4, 59, 0.190, 0.74 },
     { "Davies", "Z", "MIL", 5, 0, 1.54, 9, 9, 0, 0, 52.2, 46, 14, 9, 4, 16, 36, 0.240, 1.18 },
