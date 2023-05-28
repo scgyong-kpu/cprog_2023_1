@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int values[] = {
     838, 41, 229, 639, 84, 257, 988, 348, 797, 783, 
