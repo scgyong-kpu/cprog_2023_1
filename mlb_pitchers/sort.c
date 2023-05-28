@@ -13,7 +13,10 @@ int num_cmp(const void *a, const void *b)
   int v2 = *(int *)b;
   int d10_1 = v1 / 10 % 10;
   int d10_2 = v2 / 10 % 10;
-  return d10_1 - d10_2;
+  if (d10_1 != d10_2) {
+    return d10_1 - d10_2;
+  }
+  return v1 - v2;
 }
 
 void printValues(void)
