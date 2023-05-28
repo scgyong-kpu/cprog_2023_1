@@ -11,7 +11,7 @@ int num_cmp(const void *a, const void *b)
 {
   int v1 = *(int *)a;
   int v2 = *(int *)b;
-  return v1 - v2;
+  return -(v1 - v2);
 }
 
 void printValues(void)
