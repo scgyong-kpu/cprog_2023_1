@@ -1,4 +1,4 @@
-// from MLB.com:
+﻿// from MLB.com:
 // RK  Player  Team    W   L   ERA▲    G   GS  SV  SVO IP  H   R   ER  HR  BB  SO  AVG WHIP
 // 1    Ryu, H LAD 6   1   1.52    9   9   0   0   59.1    40  10  10  6   4   59  .190    0.74
 
