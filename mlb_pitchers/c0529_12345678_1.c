@@ -28,7 +28,12 @@ int Pitcher_cmp_win_lose(const void *a, const void *b)
     }
     // 승수가 같으편 패 수를 비교한다
     int lose_diff = p1->lose - p2->lose;
-    return lose_diff;
+    if (lose_diff != 0) {
+        return lose_diff;
+    }
+
+    // 패 수도 같으면 방어율도 비교한다
+    return Pitcher_cmp_era(p1, p2);
 }
 
 int main(int argc, char const *argv[])
@@ -37,7 +42,7 @@ int main(int argc, char const *argv[])
     qsort(pitchers,
         pitcher_count,
         sizeof(pitchers[0]),
-        Pitcher_cmp_era);
+        Pitcher_cmp_win_lose);
     printf("----------\n");
     Pitcher_printAll(10);
     return 0;
