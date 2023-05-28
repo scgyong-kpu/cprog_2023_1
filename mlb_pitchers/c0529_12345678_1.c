@@ -8,6 +8,8 @@ int Pitcher_cmp_lastName(const void *a, const void *b)
     const Pitcher *p1 = (const Pitcher *)a;
     const Pitcher *p2 = (const Pitcher *)b;
 
+    static int count;
+    printf("%d. %s vs %s\n", ++count, p1->lastName, p2->lastName);
     return strcmp(p1->lastName, p2->lastName);
 }
 
